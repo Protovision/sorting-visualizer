@@ -342,7 +342,13 @@
 			if(!animation.coroutine){
 				animation.coroutine = algorithms[elements['algorithm'].value](array);}
 			animation.step(onSorted);});
-		elements['begin'].click();};
+		elements['begin'].click();
+		elements['stop'].click();
+		window.addEventListener('beforeunload',
+		(event)=>{
+			elements['begin'].click();
+			elements['stop'].click();
+			return;});};
 	if(document.readyState === 'loading'){
 		document.addEventListener('DOMContentLoaded', (event)=>{
 			main();});}
