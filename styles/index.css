@@ -1,0 +1,82 @@
+main{
+	margin:0.5em;
+	line-height:1.5;
+	font-family:'Blinker',sans-serif;}
+
+a:link,
+a:visited{
+	color:#11e;
+	text-decoration:none;}
+
+a:hover,
+a:focus{
+	text-decoration:underline;}
+
+a:active{
+	color:#1e1;}
+
+main>footer>address>ul{
+	display:flex;
+	flex-flow:row wrap;
+	margin:0 -0.25em;
+	padding:0;
+	flex-flow:row wrap;
+	list-style-type:none;}
+
+main>footer>address>ul>li{
+	display:inline-block;
+	margin:0 0.25em;
+	font-size:2em;
+	transition:all 0.1s linear;}
+
+main>footer>address>ul>li:hover,
+main>footer>address>ul>li:focus{
+	transform:scale(1.25);}
+
+#view{
+	display:flex;
+	margin:1em -1px;
+	padding:0;
+	flex-flow:row wrap;
+	justify-content:center;
+	list-style-type:none;}
+
+#view>td{
+	display:inline-block;
+	margin:0.125em 1px;
+	/*height:25em;
+	width:0.25em;*/}
+
+#setup>div>div,
+#controls>div>div{
+	margin:0.25em -0.25em;
+	display:flex;
+	flex-flow:row wrap;
+	justify-content:center;}
+
+#setup>div>div>*,
+#controls>div>div>*{
+	margin:0 0.25em;
+	box-sizing:border-box;
+	width:calc(100% - 0.5em);}
+
+#setup>div:last-of-type>div>*,
+#controls>div:last-of-type>div>*{
+	margin-top:0.5em;
+	width:auto;}
+
+@media screen and (min-width:38.25em){
+	main{
+		box-sizing:border-box;
+		margin:0 auto;
+		padding:1em;
+		max-width:76.5em;}
+	#setup>div,
+	#controls>div{
+		display:flex;
+		flex-flow:row wrap;
+		justify-content:center;}
+	#setup>div>div,
+	#controls>div>div{
+		margin:0.25em;
+		width:calc(50% - 0.5em);}}
