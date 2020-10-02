@@ -51,25 +51,35 @@
 			let j = middle;
 			for(let k = begin; k < end; ++k){
 				array.setColorAt(begin, colors.green);
+				workArray.setColorAt(begin, colors.green);
 				array.setColorAt(end - 1, colors.magenta);
+				workArray.setColorAt(end - 1, colors.magenta);
 				array.setColorAt(i, colors.red);
+				workArray.setColorAt(i, colors.red);
 				if(j < end){
-					array.setColorAt(j, colors.cyan);}
+					array.setColorAt(j, colors.cyan);
+					workArray.setColorAt(j, colors.cyan);}
 				yield;
 				if(i < middle && (j >= end || workArray.getValueAt(i) <= 
 				workArray.getValueAt(j))){
 					array.setValueAt(k, workArray.getValueAt(i));
 					++i;
-					array.setColorAt(i - 1, colors.black);}
+					array.setColorAt(i - 1, colors.black);
+					workArray.setColorAt(i - 1, colors.black);}
 				else{
 					array.setValueAt(k, workArray.getValueAt(j));
 					++j;
-					array.setColorAt(j - 1, colors.black);}}
+					array.setColorAt(j - 1, colors.black);
+					workArray.setColorAt(j - 1, colors.black);}}
 			array.setColorAt(begin, colors.black);
+			workArray.setColorAt(begin, colors.black);
 			array.setColorAt(end - 1, colors.black);
+			workArray.setColorAt(end - 1, colors.black);
 			array.setColorAt(i, colors.black);
+			workArray.setColorAt(i, colors.black);
 			if(j < end){
-				array.setColorAt(j, colors.black);}},
+				array.setColorAt(j, colors.black);
+				workArray.setColorAt(j, colors.black);}},
 		recursiveMergeSort:
 		function*(workArray, begin, end, array){
 			if(end - begin <= 1){
@@ -155,8 +165,7 @@
 					array.setColorAt(i, colors.green);
 					array.setColorAt(j, colors.magenta);
 					yield;
-					if(parseInt(array.getValueAt(j - 1)) <= 
-					parseInt(array.getValueAt(j))){
+					if(array.getValueAt(j - 1) <= array.getValueAt(j)){
 						array.setColorAt(j, colors.black);
 						break;}
 					array.swapValuesAt(j, j - 1);
